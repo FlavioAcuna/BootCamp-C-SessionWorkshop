@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "";
+}
+
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-6"> Bienvenido @Context.Session.GetString("UserName")!</h2>
+            </div>
+            <div class="col">
+                <form form asp-action="CerrarSesion" asp-controller="Home" method="post"> <button type="submit"
+                        class=" btn btn-danger">
+                        Cerrar Sesion
+                    </button></form>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <h1>@Context.Session.GetInt32("initialNumber")</h1>
+        </div>
+        <div class="row my-3">
+            <div class="shadow col bg-warning m-2">
+                <form asp-action="SumaOne" asp-controller="Home" method="post">
+                    <button type="submit" class="w-100 btn btn-warning">
+                        <h2>+1</h2>
+                    </button>
+                </form>
+            </div>
+            <div class="shadow col bg-primary m-2 text-white">
+                <form asp-action="RestaOne" asp-controller="Home" method="post">
+                    <button type="submit" class="w-100 btn btn-primary">
+                        <h2>- 1</h2>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="shadow col bg-danger m-2 text-white">
+                <form asp-action="DoubleNumber" asp-controller="Home" method="post">
+                    <button type="submit" class="w-100 btn btn-danger">
+                        <h2>X2</h2>
+                    </button>
+                </form>
+            </div>
+            <div class="shadow col bg-success m-2 ">
+                <form asp-action="RandomNumber" asp-controller="Home" method="post">
+                    <button type="submit" class="w-100 btn btn-success">
+                        <h2>+ Random</h2>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

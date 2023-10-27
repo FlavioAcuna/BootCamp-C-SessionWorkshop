@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model User
+
+<div class="text-center">
+    <h1>Bienvenido!</h1>
+    <h4 class="display-6">Por favor, indique su nombre: </h4>
+    <div class="container">
+        <form asp-action="Username" asp-controller="Home" method="post">
+            <input asp-for="Name">
+            <br>
+            <span asp-validation-for="Name"></span>
+            <br>
+            <button class="btn btn-success mt-3">Enviar</button>
+        </form>
+    </div>
+</div>
